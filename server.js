@@ -22,10 +22,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use((req, res, next) => {
-//   res.render('maintenance.hbs');
-// });
-
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear()
 });
@@ -37,6 +33,13 @@ app.get('/', (req, res) => {
     res.render('home.hbs', {
       pageTitle: 'Home page',
       welcome: 'Hello'
+    });
+});
+
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio.hbs', {
+      pageTitle: 'Portfolio page',
+      screamBitch: 'I am 19'
     });
 });
 
